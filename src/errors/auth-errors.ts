@@ -26,6 +26,12 @@ export class UnauthorizedUserError extends AppError {
 
 export class InvalidRegisterUserDataError extends AppError {
     constructor() {
-        super("Please provide either 'name', 'email' and 'password' to register a new user", 400)
+        super("Please provide 'name', 'email' and 'password' to register a new user", 400)
+    }
+}
+
+export class InvalidLoginUserDataError extends AppError {
+    constructor() {
+        super("Please provide both 'email' and 'password' to register a new user", 400)
     }
 }
