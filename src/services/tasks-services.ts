@@ -30,6 +30,7 @@ export async function updateTask(userID: string, taskID: string, newData: Update
     const newTaskData = {
         title: newData.title || oldTask[0].title,
         description: newData.description || oldTask[0].description,
+        done: newData.done || oldTask[0].done,
         dueDate: newData.dueDate || oldTask[0].dueDate
     }
 

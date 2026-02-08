@@ -7,5 +7,6 @@ export type CreateTaskDTO = typeof tasks.$inferInsert
 export type UpdateTaskDTO = {
     title?: string,
     description?: string,
+    done?: boolean,
     dueDate?: Date
 }

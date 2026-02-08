@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
+import { boolean, pgTable, text, timestamp, uuid, varchar } from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
     id: uuid("id").primaryKey(),
@@ -12,6 +12,7 @@ export const tasks = pgTable("tasks", {
     id: uuid("id").primaryKey().defaultRandom(),
     title: text("title").notNull(),
     description: text("description"),
+    done: boolean("done").default(false),
     dueDate: timestamp("due_date"),
     userID: uuid("user_id").notNull()
         .references(() => users.id, {
