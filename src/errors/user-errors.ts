@@ -12,6 +12,12 @@ export class RegisterUserError extends AppError {
     }
 }
 
+export class LoginUserError extends AppError {
+    constructor() {
+        super("An error occured while loging in, try again later", 500)
+    }
+}
+
 export class UpdateUserError extends AppError {
     constructor() {
         super("An error occured while updating the user data, try again later", 500)
