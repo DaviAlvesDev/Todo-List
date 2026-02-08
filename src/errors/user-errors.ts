@@ -29,3 +29,9 @@ export class DeleteUserError extends AppError {
         super("An error occured while deleting the user data, try again later", 500)
     }
 }
+
+export class InvalidUpdateUserDataError extends AppError {
+    constructor() {
+        super("Please provide either 'name' or 'email' to update a profile", 400)
+    }
+}
