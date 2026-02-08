@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 import { AppError } from "../errors/app-error.js";
-import { AuthError } from "@supabase/supabase-js";
+import { AuthApiError, AuthError } from "@supabase/supabase-js";
 
 export function globalError(err: any, req: Request, res: Response, next: NextFunction) {
     if (err instanceof AppError) {
@@ -15,7 +15,7 @@ export function globalError(err: any, req: Request, res: Response, next: NextFun
             })
     }
 
-    if (err instanceof AuthError) {
+    if (err instanceof AuthError || err instanceof AuthApiError) {
         const statusCode = err.status && err.status >= 100 && err.status <= 600 ?
             err.status : 500
 

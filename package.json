@@ -18,7 +18,8 @@
   "scripts": {
     "start": "node ./dist/server.js",
     "dev": "concurrently \"tsc -w\" \"nodemon ./dist/server.js\"",
-    "db:push": "drizzle-kit push"
+    "db:push": "drizzle-kit push",
+    "seed:admin": "node ./dist/db/seeds/create-admin.js"
   },
   "type": "module"
 }
