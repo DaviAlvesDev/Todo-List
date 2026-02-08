@@ -11,3 +11,15 @@ export class AuthorizationError extends AppError {
         super("An error occured while validating the token, try again later", 500)
     }
 }
+
+export class UserNotLoggedError extends AppError {
+    constructor() {
+        super("The user is not logged", 401)
+    }
+}
+
+export class UnauthorizedUserError extends AppError {
+    constructor() {
+        super("The user is unauthorized", 403)
+    }
+}
